@@ -11,8 +11,25 @@
 
 # 接下来，使用 Python 的 scipy 库来实现层次聚类，并使用 matplotlib 库绘制树状图。我们将使用相同的模拟数据来展示层次聚类的结果。
 
+''' from scipy.cluster.hierarchy import dendrogram, linkage
+from matplotlib import pyplot as plt
+ '''
+# 算法导入
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
 from scipy.cluster.hierarchy import dendrogram, linkage
 from matplotlib import pyplot as plt
+
+# 定义变量X的数据特征或者数据结构
+# X=[(0,1),(1,2),(2,3)]
+# 数据生成的模拟
+
+# 随机生成数据X
+np.random.seed(0)
+X, y = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
 
 # 生成层次聚类的链接矩阵
 Z = linkage(X, method='ward')

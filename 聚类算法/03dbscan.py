@@ -22,6 +22,7 @@ X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
 
 # 应用DBSCAN算法
 dbscan = DBSCAN(eps=0.5, min_samples=5)
+# 邻域大小（eps=0.5）和最小点数（min_samples=5）
 clusters = dbscan.fit_predict(X)
 
 # 绘制聚类结果
